@@ -16,14 +16,14 @@ public class ServiceP {
     private final Random random;
     private final ChatModel ia;
 
-    private final String[] lin = { "Java", "cobol", "js", "pawn", "c++", "c", "py" };
+    private final String[] lin = { "Java", "cobol", "javascript", "pawno", "c++", "c", "py" };
     private final String[] dif = { "estagiario", "junior", "pleno", "senior", "Engenharia de Software",
             "arquiteto de software" };
 
     public ServiceP() {
         random = new Random();
         ia = OpenAiChatModel.builder()
-                .apiKey(System.getenv("api_key")) 
+                .apiKey(System.getenv("API_KEY")) 
                 .baseUrl("https://api.groq.com/openai/v1") 
                 .modelName("llama-3.1-8b-instant")               
                 .build();
