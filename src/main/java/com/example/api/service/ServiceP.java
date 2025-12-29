@@ -65,13 +65,15 @@ Regras:
 
         ObjectMapper op = new ObjectMapper();
         Model quiz = new Model();
+        Model2 quiz2 = new Model2(l, res, res, d);
         try {
             JsonNode node = op.readTree(res);
             quiz = op.treeToValue(node, Model.class);
+            quiz2 = new Model2(quiz.getTitle(),  quiz.getDescription(), quiz.getAnswer(), d);
         } catch (Exception e) {
-           crateNewQuizz();
+          quiz2 =  crateNewQuizz();
         }
-        Model2 quiz2 = new Model2(quiz.getTitle(),  quiz.getDescription(), quiz.getAnswer(), d);
+       
         
         return quiz2;
     }
