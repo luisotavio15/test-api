@@ -55,6 +55,9 @@ Regras:
 
         String res = ia.chat(promat);
         res = res.replaceAll("```json", "") .replaceAll("```", "") .trim(); 
+        res = res.replaceAll(":\\s*\"([^\"]*?)\"([^\"]*?)\"", ": \"$1\\\"$2\\\"\"");
+        res = res.replaceAll(":(\\s*)\"([^\"]*?)\"", ": \"$2\""); 
+        res = res.replaceAll("\\\"","\\\\\"");
 
         if (!res.endsWith("}")) { 
             res = res + "}"; 
