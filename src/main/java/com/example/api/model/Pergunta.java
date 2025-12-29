@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-import jakarta.*;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
