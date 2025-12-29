@@ -47,7 +47,7 @@ public class SalvarDb {
     }
 
     public void deleteAll(){
-        perguntaRepo.deleteAll();
+        perguntaRepo.deleteAllInBatch();
     }
 
     public void deleteById(Long id){
