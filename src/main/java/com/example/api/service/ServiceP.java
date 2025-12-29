@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.api.util.Model;
 import com.example.api.util.Model2;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import dev.langchain4j.model.chat.ChatModel;
@@ -62,7 +63,8 @@ Regras:
         ObjectMapper op = new ObjectMapper();
         Model quiz = new Model();
         try {
-            quiz = op.readValue(res, Model.class);
+            JsonNode node = op.readTree(res);
+            quiz = op.treeToValue(node, Model.class);
         } catch (Exception e) {
             throw new RuntimeException("Erro ao converter JSON da IA: " + res, e);
         }
