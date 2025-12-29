@@ -53,5 +53,13 @@ public class SalvarDb {
     public void deleteById(Long id){
         perguntaRepo.deleteById(id);
     }
+    @Cacheable("test")
+    public Pergunta fin(String a ){
+        return perguntaRepo.findBytitle(a);
+    }
+    @Cacheable("id")
+    public Pergunta fin2(Long id){
+        return perguntaRepo.findById(id).orElseThrow();
+    }
     
 }

@@ -5,6 +5,6 @@ package com.example.api.dto;
     private String title;
     private String description;
     private String answer; */
-public record DtoPer(Long id, String title, String description, String answer) {
+public record DtoPer(boolean iscorret) {
     
 }
