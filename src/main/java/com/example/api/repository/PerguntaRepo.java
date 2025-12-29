@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.example.api.model.Pergunta;
 @Repository
 public interface PerguntaRepo extends JpaRepository<Pergunta, Long> {
-    @Query(value = "SELECT * FROM pergunta ORDER BY RAND() LIMIT 1", nativeQuery = true) 
+    @Query(value = "SELECT * FROM pergunta ORDER BY RANDOM() LIMIT 1", nativeQuery = true)
+
     Pergunta findRandom(); 
 }

@@ -23,7 +23,7 @@ public class ServiceP {
     public ServiceP() {
         random = new Random();
         ia = OpenAiChatModel.builder()
-                .apiKey(System.getenv("api-key")) 
+                .apiKey(System.getenv("api_key")) 
                 .baseUrl("https://api.groq.com/openai/v1") 
                 .modelName("llama-3.1-8b-instant")               
                 .build();
