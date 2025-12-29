@@ -44,7 +44,7 @@ public class ControllerApi {
     public void reset() {
         salvarDb.deleteAll();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <50; i++) {
             // gera quiz
             Model2 mo = serviceP.crateNewQuizz();
             Pergunta pt = new Pergunta(mo.getTitle(), mo.getDescription(), mo.getAnswer(), mo.getSenioridade());
