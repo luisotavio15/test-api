@@ -69,7 +69,7 @@ Regras:
             JsonNode node = op.readTree(res);
             quiz = op.treeToValue(node, Model.class);
         } catch (Exception e) {
-            throw new RuntimeException("Erro ao converter JSON da IA: " + res, e);
+           crateNewQuizz();
         }
         Model2 quiz2 = new Model2(quiz.getTitle(),  quiz.getDescription(), quiz.getAnswer(), d);
         
